@@ -1,0 +1,18 @@
+<input type="text" onkeypress="barcode_click(event)"/>
+                        <script type="text/javascript">
+                            function barcode_click(ev) {
+                                console.log(ev);
+                                ev.preventDefault();
+                                if(ev.keyCode == 13){
+                                    console.log("enter Press");
+                                    var element = document.getElementsByName('barcode');
+                                    element[0].value = ev.target.value
+                                    var event = new Event('change');
+                                    element[0].dispatchEvent(event);
+                                    return false;
+                                }
+                            }
+                        </script>
+	
+
+
